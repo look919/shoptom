@@ -1,0 +1,139 @@
+{
+  "Import": {
+    "prefix": "im",
+    "description": "🙈 dawaj import!",
+    "body": ["import { ${2} } from './${1}';", "$0"]
+  },
+  "Console.log": {
+    "prefix": "clog",
+    "description": "🙈 dawaj console.log!",
+    "body": ["console.log('${1}', ${1});", "$0"]
+  },
+  "Console.log-Blue": {
+    "prefix": "clogb",
+    "description": "🙈 dawaj console.log blue!",
+    "body": ["console.log('\\x1b[34m' + '${1}' + '\\x1b[0m', ${1});", "$0"]
+  },
+  "Console.log-Red": {
+    "prefix": "clogr",
+    "description": "🙈 dawaj console.log red!",
+    "body": ["console.log('\\x1b[31m' + '${1}' + '\\x1b[0m', ${1});", "$0"]
+  },
+  "Console.log-Green": {
+    "prefix": "clogg",
+    "description": "🙈 dawaj console.log green!",
+    "body": ["console.log('\\x1b[32m' + '${1}' + '\\x1b[0m', ${1});", "$0"]
+  },
+  "Map-Arrow": {
+    "prefix": "map",
+    "description": "🙈 dawaj array.map/arrow!",
+    "body": ["${1:collection}.map((${2:item}) => ${3:mappedItem})", "$0"]
+  },
+  "Map-Return": {
+    "prefix": "map-fn",
+    "description": "🙈 dawaj array.map/return!",
+    "body": [
+      "${1:collection}.map((${2:item}) => {",
+      "",
+      "  return ${3:newAggr}",
+      "})",
+      "$0"
+    ]
+  },
+  "Filter-Arrow": {
+    "prefix": "fil",
+    "description": "🙈 dawaj array.filter/arrow!",
+    "body": ["${1:collection}.filter((${2:item}) => ${3:mappedItem})", "$0"]
+  },
+  "Filter-Return": {
+    "prefix": "fil-fn",
+    "description": "🙈 dawaj array.filter/return!",
+    "body": [
+      "${1:collection}.fiter((${2:item}) => {",
+      "",
+      "  return ${3:newAggr}",
+      "})",
+      "$0"
+    ]
+  },
+  "Reducer-Arrow": {
+    "prefix": "red",
+    "description": "🙈 dawaj array.reduce/arrow!",
+    "body": [
+      "${1:collection}.reduce((${3:aggr}, ${2:item}) => ${5:newAggr}, ${4:initial})",
+      "$0"
+    ]
+  },
+  "Reducer-Return": {
+    "prefix": "red-fn",
+    "description": "🙈 dawaj array.reduce/return!",
+    "body": [
+      "${1:collection}.reduce((${3:aggr}, ${2:item}) => {",
+      "  return ${5:newAggr}",
+      "}, ${4:initial})",
+      "$0"
+    ]
+  },
+  "StyledComponent": {
+    "prefix": "styl-comp",
+    "description": "💅 emotion",
+    "body": [
+      "import styled from '@emotion/styled';",
+      "",
+      "export const ${1:Component} = styled.${2:tag}`",
+      "  $0color: green;",
+      "`;",
+      ""
+    ]
+  },
+  "StyledComponentWithProps": {
+    "prefix": "styl-comp-p",
+    "description": "💅 styled-components with props",
+    "body": [
+      "import styled from '@emotion/styled';",
+      "",
+      "type ${1:Component}Props {",
+      "  ${3:color: string}",
+      "}",
+      "",
+      "export const ${1:Component} = styled.${2:tag}<${TM_FILENAME_BASE}Props>(({ ${3:color} }) => ({",
+      "  $0color: ${3:color};",
+      "}));",
+      ""
+    ]
+  },
+  "FunctionComponent": {
+    "prefix": "rafc",
+    "description": "📦 function component (custom name)",
+    "body": [
+      "type ${1:Component}Props = {",
+      "  ${2:prop}",
+      "}",
+      "",
+      "export const ${1:Component} = ({${3:props}}:${1:Component}Props) => {",
+      "",
+      "  return ( ",
+      "   <>${4}</>",
+      "  ) ",
+      "}",
+      "$0"
+    ]
+  },
+  "FunctionComponentFileName": {
+    "prefix": "rafc-name",
+    "description": "📦 function component (name from file)",
+    "body": [
+      "type ${TM_FILENAME_BASE}Props = {",
+      "  ${2:prop}",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE} = ({${3:props}}:${TM_FILENAME_BASE}Props) => {",
+      "",
+      "  return ( ",
+      "   <>${4}</>",
+      "  ) ",
+      "}",
+      "$0"
+    ]
+  }
+}
