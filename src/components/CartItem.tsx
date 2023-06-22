@@ -1,29 +1,14 @@
-import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { getImageFromBucket } from '@lib/getImageFromBucket';
-import { CartProduct } from '../../../types/Product';
 import { generateProductPrice } from '@utils/product';
+import { CartProduct } from '../../types/Product';
 
 type Props = {
   product: CartProduct;
-  withImage?: boolean;
 };
 
-export const CartItem = async ({ withImage = false, product }: Props) => {
-  const [productImage, setProductImage] = React.useState<string | null>(null);
-  // const productImage = withImage
-  //   ? await getImageFromBucket(product.details.images[0].url)
-  //   : null;
-
-  useEffect(() => {
-    const fetchProductImage = async () => {
-      if (withImage) {
-        const image = await getImageFromBucket(product.details.images[0].url);
-        setProductImage(image);
-      }
-    };
-    fetchProductImage();
-  }, [productImage, withImage, product.details.images]);
+export const CartItem = async ({ product }: Props) => {
+  const productImage = await getImageFromBucket(product.details.images[0].url);
 
   return (
     <div className='flex items-center'>

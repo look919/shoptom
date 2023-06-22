@@ -14,5 +14,5 @@ module.exports = {
   importOrder: ['^react$', '^next', '<THIRD_PARTY_MODULES>', '^@(.*)$', '^[./]'],
   importOrderSeparation: false,
   importOrderSortSpecifiers: false,
-  plugins: [require('prettier-plugin-tailwindcss')],
+  plugins: ['@trivago/prettier-plugin-sort-imports', require('prettier-plugin-tailwindcss')],
 };

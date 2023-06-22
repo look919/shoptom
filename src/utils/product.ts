@@ -1,4 +1,4 @@
-import { DashboardProduct } from '../types/Product';
+import { DashboardProduct } from '../../types/Product';
 import { removeDuplicates } from './removeDuplicates';
 import { sortAlphabetically } from './sortAlphabetically';
 

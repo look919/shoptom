@@ -1,6 +1,6 @@
 import { StoreApi, UseBoundStore, create } from 'zustand';
 // import { AddToCartFormSchema } from '@page/product/[id]/AddToCartForm';
-import { CartProduct, Product } from '../types/Product';
+import { CartProduct, Product } from '../../types/Product';
 import { addToCartAction } from './actions';
 
 type AddToCartFormSchema = {};
