@@ -5,3 +5,4 @@ export { Input } from './Input';
 export * from './Icons';
 export { Select } from './Select';
 export { Textarea } from './Textarea';
+export { CartItem } from './CartItem';

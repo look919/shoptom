@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import { Toaster } from 'react-hot-toast';
 import { ClerkProvider } from '@clerk/nextjs/app-beta';
-import { UserProfile } from '@server-ui/UserProfile';
 import { Icons } from '@ui';
+import { UserProfile } from './UserProfile';
 import './globals.css';
 
 export const metadata = {

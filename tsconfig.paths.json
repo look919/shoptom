@@ -8,7 +8,6 @@
       "@domainTypes/*": ["types/*"],
       "@ui": ["components"],
       "@ui/*": ["components/*"],
-      "@server-ui/*": ["components/server/*"],
       "@utils/*": ["utils/*"]
     }
   }
