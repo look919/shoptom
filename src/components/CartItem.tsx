@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { getImageFromBucket } from '@lib/getImageFromBucket';
 import { generateProductPrice } from '@utils/product';
-import { CartProduct } from '../../types/Product';
+import { CartProduct } from '../types/Product';
 
 type Props = {
   product: CartProduct;

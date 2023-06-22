@@ -1,9 +1,23 @@
-const HomePage = () => {
+import type { DashboardProduct } from '@domainTypes/Product';
+import { db } from '@lib/db';
+import { Product } from './Product';
+
+export default async function HomePage() {
+  const products: DashboardProduct[] = await db.product.findMany({
+    include: {
+      images: true,
+      dimensions: true,
+    },
+  });
+
   return (
-    <main className='flex min-h-screen flex-col p-24'>
-      <div className='flex w-full max-w-5xl justify-center text-2xl'>Boilerplate</div>
+    <main className='flex'>
+      <aside className='w-full max-w-sm'>Tomo</aside>
+      <div className='grid grid-cols-4 gap-8'>
+        {products.map(product => (
+          <Product product={product} key={product.name} />
+        ))}
+      </div>
     </main>
   );
-};
-
-export default HomePage;
+}

@@ -1,6 +1,5 @@
 // import { AddToCartFormSchema } from '@route/product/[id]/AddToCartForm';
-
-import { CartProduct, Product } from '../../types/Product';
+import { CartProduct, Product } from '../types/Product';
 import type { SetStore } from './index';
 
 type AddToCartFormSchema = any;
