@@ -1,1 +1,1 @@
-export * from './BoilerplateComponent';
+export { Button } from './Button';

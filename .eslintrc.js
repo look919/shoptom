@@ -7,7 +7,6 @@ module.exports = {
   extends: ['airbnb-typescript', 'eslint:recommended', 'next/core-web-vitals', 'prettier'],
   rules: {
     '@typescript-eslint/no-implicit-any-catch': 1,
-    '@typescript-eslint/no-unsafe-call': 2,
     '@typescript-eslint/no-unsafe-return': 2,
     '@typescript-eslint/no-unnecessary-type-assertion': 1,
     complexity: [2, { max: 18 }],

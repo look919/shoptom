@@ -3,8 +3,11 @@
     "baseUrl": "./src",
     "paths": {
       "@page/*": ["app/*"],
+      "@lib/*": ["lib/*"],
+      "@store": ["store/index.ts"],
       "@ui": ["components"],
-      "@ui-client": ["components/client"]
+      "@ui-client": ["components/client"],
+      "@utils/*": ["utils/*"]
     }
   }
 }

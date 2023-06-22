@@ -1,1 +1,1 @@
-export * from './BoilerplateClientComponent';
+export * from './CartItem';
