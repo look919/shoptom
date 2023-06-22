@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@page/*": ["app/*"],
+      "@ui": ["components"],
+      "@ui-client": ["components/client"]
+    }
+  }
+}
