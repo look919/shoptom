@@ -38,7 +38,7 @@ export const ImageGalleryDialog = ({ productId, images }: ImageGalleryDialogProp
     <section className='fixed left-0 top-0 z-50 h-screen w-screen' onClick={handleClickOutside}>
       <dialog
         className={twMerge(
-          'fixed left-1/2 top-1/2 flex w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 flex-col ',
+          'fixed left-1/2 top-1/2 flex w-full max-w-7xl -translate-x-1/2 -translate-y-1/2 flex-col ',
           'rounded border border-slate-200 bg-zinc-900 p-6',
           'backdrop:bg-slate-700 backdrop:bg-opacity-30',
         )}

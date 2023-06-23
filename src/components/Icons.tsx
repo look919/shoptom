@@ -7,4 +7,5 @@ export const Icons = {
   arrowUp: Icon.ChevronUpIcon,
   arrowDown: Icon.ChevronDownIcon,
   star: Icon.StarIcon,
+  gallery: Icon.CameraIcon,
 };

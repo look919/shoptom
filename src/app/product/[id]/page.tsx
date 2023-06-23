@@ -1,7 +1,7 @@
 import type { Product } from '@domainTypes/Product';
 import { db } from '@lib/db';
-import { getImageFromBucket } from '@lib/getImageFromBucket';
 import { Divider } from '@ui';
+import { getImagePath } from '@utils/getImagePath';
 import { generateProductPrice } from '@utils/product';
 import { ImageGallery } from '../../../components/ImageGallery';
 import { AddToCartForm } from './AddToCartForm';
@@ -25,7 +25,7 @@ export default async function ProductPage({ params }: Props) {
     },
   });
 
-  const images = await Promise.all(product.images.map(async image => getImageFromBucket(image.url)));
+  const images = product.images.map(image => getImagePath(image));
 
   const price = generateProductPrice(product.price);
 

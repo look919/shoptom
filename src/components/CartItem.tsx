@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getImageFromBucket } from '@lib/getImageFromBucket';
+import { getImagePath } from '@utils/getImagePath';
 import { generateProductPrice } from '@utils/product';
 import { CartProduct } from '../types/Product';
 
@@ -8,13 +8,12 @@ type Props = {
 };
 
 export const CartItem = async ({ product }: Props) => {
-  const productImage = await getImageFromBucket(product.details.images[0].url);
+  const imgSrc = getImagePath(product.details.images[0]);
 
   return (
     <div className='flex items-center'>
-      {productImage && (
-        <Image src={productImage} width={120} height={120} alt='product photo' className='mr-4 h-28 w-28 pb-4' />
-      )}
+      <Image src={imgSrc} width={120} height={120} alt='product photo' className='mr-4 h-28 w-28 pb-4' />
+
       <div className='mb-4 flex w-full flex-col border-b border-slate-400 pb-2 text-start'>
         <span className='font-bold'>{product.details.producer}</span>
         <div className='flex items-center justify-between'>

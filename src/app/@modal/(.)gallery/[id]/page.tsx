@@ -1,5 +1,5 @@
 import { db } from '@lib/db';
-import { getImageFromBucket } from '@lib/getImageFromBucket';
+import { getImagePath } from '@utils/getImagePath';
 import { ImageGalleryDialog } from './ImageGalleryDialog';
 
 type Props = {
@@ -16,9 +16,7 @@ export default async function ImageGalleryModalInterceptedPage({ params }: Props
     },
   });
 
-  const images = Array.isArray(product.images)
-    ? await Promise.all(product.images.map(async image => getImageFromBucket(image.url)))
-    : [];
+  const images = product.images.map(image => getImagePath(image));
 
   return <ImageGalleryDialog productId={params.id} images={images} />;
 }

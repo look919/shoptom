@@ -1,5 +1,5 @@
 import { DashboardProduct } from '@domainTypes/Product';
-import { getImageFromBucket } from '@lib/getImageFromBucket';
+import { getImagePath } from '@utils/getImagePath';
 import { ProductDetails } from './ProductDetails';
 import { ProductImage } from './ProductImage';
 
@@ -8,11 +8,11 @@ type Props = {
 };
 
 export async function Product({ product }: Props) {
-  const img = await getImageFromBucket(product.images[0].url);
+  const imgSrc = getImagePath(product.images[0]);
 
   return (
-    <section className='relative flex w-80 flex-col p-6'>
-      <ProductImage src={img} width={320} height={320} productId={product.id} />
+    <section className='relative grid w-80 grid-rows-[repeat(2,200px)] flex-col p-6'>
+      <ProductImage src={imgSrc} width={320} height={320} productId={product.id} />
       <ProductDetails product={product} />
     </section>
   );
