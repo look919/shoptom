@@ -1,4 +1,3 @@
-import type { Product } from '@domainTypes/Product';
 import { db } from '@lib/db';
 import { Divider } from '@ui';
 import { getImagePath } from '@utils/getImagePath';
@@ -12,7 +11,7 @@ type Props = {
 };
 
 export default async function ProductPage({ params }: Props) {
-  const product: Product = await db.product.findFirstOrThrow({
+  const product = await db.product.findFirstOrThrow({
     include: {
       images: true,
       dimensions: true,

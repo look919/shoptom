@@ -1,7 +1,7 @@
 import Image from 'next/image';
+import { CartProduct } from 'store/addToCartAction';
 import { getImagePath } from '@utils/getImagePath';
 import { generateProductPrice } from '@utils/product';
-import { CartProduct } from '../types/Product';
 
 type Props = {
   product: CartProduct;

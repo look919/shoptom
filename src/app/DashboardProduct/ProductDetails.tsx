@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
-import { DashboardProduct } from '@domainTypes/Product';
+import { Product, Image, Dimension } from '@prisma/client';
 import { generateProductPrice, getProductSizes } from '@utils/product';
 
 type Props = {
-  product: DashboardProduct;
+  product: Product & {
+    images: Image[];
+    dimensions: Dimension[];
+  };
 };
 
 export const ProductDetails = ({ product }: Props) => {

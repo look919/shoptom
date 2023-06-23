@@ -1,13 +1,17 @@
-import { DashboardProduct } from '@domainTypes/Product';
+import React from 'react';
+import { Product as IProduct, Image, Dimension } from '@prisma/client';
 import { getImagePath } from '@utils/getImagePath';
 import { ProductDetails } from './ProductDetails';
 import { ProductImage } from './ProductImage';
 
 type Props = {
-  product: DashboardProduct;
+  product: IProduct & {
+    images: Image[];
+    dimensions: Dimension[];
+  };
 };
 
-export async function Product({ product }: Props) {
+export function DashboardProduct({ product }: Props) {
   const imgSrc = getImagePath(product.images[0]);
 
   return (

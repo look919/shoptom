@@ -1,12 +1,25 @@
-// import { AddToCartFormSchema } from '@route/product/[id]/AddToCartForm';
-import { CartProduct, Product } from '../types/Product';
+import { AddToCartFormSchema } from '@page/product/[id]/AddToCartForm';
+import { Color, Dimension, Image, Product } from '@prisma/client';
 import type { SetStore } from './index';
 
-type AddToCartFormSchema = any;
+export type CartProduct = {
+  details: Omit<Product, 'description'> & {
+    images: Image[];
+  };
+  quantity: number;
+  size: string;
+  color: string;
+};
+
+export type AddToCartProductType = Product & {
+  dimensions: Dimension[];
+  colors: Color[];
+  images: Image[];
+};
 
 export type AddToCartAction = {
   data: AddToCartFormSchema;
-  product: Product;
+  product: AddToCartProductType;
   set: SetStore;
 };
 

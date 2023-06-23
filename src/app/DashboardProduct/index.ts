@@ -1,0 +1,1 @@
+export { DashboardProduct } from './Product';

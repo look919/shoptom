@@ -3,16 +3,16 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { AddToCartProductType } from 'store/addToCartAction';
 import { twMerge } from 'tailwind-merge';
 import { z } from 'zod';
-import { Product } from '@domainTypes/Product';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useStore } from '@store';
 import { Button, FormField } from '@ui';
 import { getProductSizes } from '@utils/product';
 
 type Props = {
-  product: Product;
+  product: AddToCartProductType;
 };
 
 const validationSchema = z.object({

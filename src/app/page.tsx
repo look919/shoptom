@@ -1,7 +1,6 @@
-import type { DashboardProduct } from '@domainTypes/Product';
 import { db } from '@lib/db';
+import { DashboardProduct } from './DashboardProduct';
 import { Filters } from './Filters';
-import { Product } from './Product';
 
 type Props = {
   searchParams: {
@@ -15,7 +14,7 @@ type Props = {
 };
 
 export default async function HomePage({ searchParams }: Props) {
-  const products: DashboardProduct[] = await db.product.findMany({
+  const products = await db.product.findMany({
     include: {
       images: true,
       dimensions: true,
@@ -55,7 +54,7 @@ export default async function HomePage({ searchParams }: Props) {
       <Filters colors={colors} />
       <div className='grid w-full grid-cols-4 justify-items-center gap-8 px-4'>
         {products.map(product => (
-          <Product product={product} key={product.name} />
+          <DashboardProduct product={product} key={product.name} />
         ))}
       </div>
     </main>

@@ -1,13 +1,10 @@
 import { StoreApi, UseBoundStore, create } from 'zustand';
-// import { AddToCartFormSchema } from '@page/product/[id]/AddToCartForm';
-import { CartProduct, Product } from '../types/Product';
-import { addToCartAction } from './actions';
-
-type AddToCartFormSchema = {};
+import { AddToCartFormSchema } from '@page/product/[id]/AddToCartForm';
+import { AddToCartProductType, CartProduct, addToCartAction } from './addToCartAction';
 
 export type Store = {
   cart: CartProduct[];
-  addToCart: (product: Product, data: AddToCartFormSchema) => void;
+  addToCart: (product: AddToCartProductType, data: AddToCartFormSchema) => void;
 };
 
 export type SetStore = (
@@ -17,5 +14,5 @@ export type SetStore = (
 
 export const useStore: UseBoundStore<StoreApi<Store>> = create<Store>(set => ({
   cart: JSON.parse(localStorage.getItem('cart') || '[]'),
-  addToCart: (product: Product, data: AddToCartFormSchema) => addToCartAction({ product, data, set }),
+  addToCart: (product: AddToCartProductType, data: AddToCartFormSchema) => addToCartAction({ product, data, set }),
 }));

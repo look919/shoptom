@@ -5,7 +5,6 @@
       "@page/*": ["app/*"],
       "@lib/*": ["lib/*"],
       "@store": ["store/index.ts"],
-      "@domainTypes/*": ["types/*"],
       "@ui": ["components"],
       "@ui/*": ["components/*"],
       "@utils/*": ["utils/*"]
