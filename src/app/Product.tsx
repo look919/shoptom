@@ -21,10 +21,10 @@ export async function Product({ product }: Props) {
         <span className='mt-2 italic'>{product.producer}</span>
         <h2 className='mb-4 mt-2 text-center text-lg'>{product.name}</h2>
         <div className='-mb-2 mt-auto flex flex-col items-center'>
-          <span>{price}</span>
+          <span className='text-green-600'>{price}</span>
           <div className='flex justify-evenly'>
             {sizes.map(size => (
-              <span className='mx-1 mt-2 flex h-8 w-8 items-center justify-center border border-slate-200' key={size}>
+              <span className='mx-1 mt-2 flex h-8 w-8 items-center justify-center border border-slate-600' key={size}>
                 {size}
               </span>
             ))}

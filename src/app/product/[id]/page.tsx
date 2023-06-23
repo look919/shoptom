@@ -36,7 +36,7 @@ export default async function ProductPage({ params }: Props) {
         <div className='flex w-1/2 flex-col self-start'>
           <span className='mt-2 text-lg italic'>Producer: {product.producer}</span>
           <h2 className='mt-6 text-4xl'>{product.name}</h2>
-          <h2 className='mt-6 text-4xl'>{price}</h2>
+          <h2 className='mt-6 text-4xl text-green-600'>{price}</h2>
           <ProductRating productId={params.id} />
           <Divider />
           <AddToCartForm product={product} />

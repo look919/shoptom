@@ -53,7 +53,7 @@ export default async function HomePage({ searchParams }: Props) {
   return (
     <main className='flex'>
       <Filters colors={colors} />
-      <div className='grid grid-cols-4 gap-8'>
+      <div className='grid w-full grid-cols-4 justify-items-center gap-8 px-4'>
         {products.map(product => (
           <Product product={product} key={product.name} />
         ))}

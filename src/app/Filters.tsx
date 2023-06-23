@@ -33,7 +33,6 @@ export const Filters = ({ colors }: Props) => {
     defaultValues: {
       minPrice: '0',
       maxPrice: '10000',
-      dimensions: ['7ft', '8ft', '9ft'],
     },
     resolver: zodResolver(validationSchema),
   });
@@ -78,7 +77,7 @@ export const Filters = ({ colors }: Props) => {
   };
 
   return (
-    <aside className='mt-8 flex w-full max-w-sm flex-col px-6'>
+    <aside className='mt-2 flex h-auto w-full max-w-sm flex-col border-r border-slate-600 px-6 pt-6'>
       <h2 className='text-2xl'>Filters</h2>
       <form className='mt-4 flex flex-col' onSubmit={form.handleSubmit(submitForm)}>
         <FormField<FiltersFormSchema>
