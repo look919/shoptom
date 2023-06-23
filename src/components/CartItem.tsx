@@ -7,7 +7,7 @@ type Props = {
   product: CartProduct;
 };
 
-export const CartItem = async ({ product }: Props) => {
+export const CartItem = ({ product }: Props) => {
   const imgSrc = getImagePath(product.details.images[0]);
 
   return (
