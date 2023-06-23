@@ -3,8 +3,8 @@ import { db } from '@lib/db';
 import { getImageFromBucket } from '@lib/getImageFromBucket';
 import { Divider } from '@ui';
 import { generateProductPrice } from '@utils/product';
+import { ImageGallery } from '../../../components/ImageGallery';
 import { AddToCartForm } from './AddToCartForm';
-import { ImageGallery } from './ImageGallery';
 import { ProductRating } from './ProductRating';
 
 type Props = {

@@ -10,7 +10,13 @@ export const metadata = {
   title: 'ShopTom',
   description: 'Find the best products for your home',
 };
-export default function RootLayout({ children }: { children: ReactNode }) {
+
+type Props = {
+  children: ReactNode;
+  modal: ReactNode;
+};
+
+export default function RootLayout({ children, modal }: Props) {
   return (
     <ClerkProvider>
       <html lang='en'>
@@ -29,6 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </header>
           {children}
+          {modal}
         </body>
       </html>
     </ClerkProvider>

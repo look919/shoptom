@@ -3,6 +3,7 @@ export { CartItem } from './CartItem';
 export { Chip } from './Chip';
 export { Divider } from './Divider';
 export { FormField } from './FormField';
+export { ImageGallery } from './ImageGallery';
 export { Input } from './Input';
 export * from './Icons';
 export { Select } from './Select';

@@ -58,8 +58,8 @@ export const ImageGallery = ({ images }: { images: string[] }) => {
           }}
         />
       </div>
-      <div className='flex h-[600px] w-1/2 justify-center'>
-        <Image src={selectedImage} alt='selected image' width={800} height={800} className='rounded-xl' />
+      <div className='flex h-[600px] justify-center'>
+        <Image src={selectedImage} alt='selected image' width={800} height={800} className='max-w-xl rounded-xl ' />
       </div>
     </>
   );
