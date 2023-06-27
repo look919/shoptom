@@ -1,5 +1,6 @@
-import { Button, Icons } from '@ui';
+import { Icons } from '@ui';
 import { CartItems } from './CartItems';
+import { Purchase } from './Purchase';
 
 export default function CartPage() {
   return (
@@ -10,7 +11,7 @@ export default function CartPage() {
       </div>
 
       <CartItems />
-      <Button className='mt-4 self-end'>Purchase</Button>
+      <Purchase />
     </main>
   );
 }
