@@ -17,6 +17,10 @@ export const Purchase = () => {
     }
   };
 
+  if (total === 0) {
+    return null;
+  }
+
   return (
     <>
       <div className='mt-4 flex justify-end'>

@@ -4,6 +4,7 @@ export const Icons = {
   search: Icon.MagnifyingGlassIcon,
   user: Icon.UserIcon,
   cart: Icon.ShoppingCartIcon,
+  emptyCart: Icon.ArchiveBoxXMarkIcon,
   arrowUp: Icon.ChevronUpIcon,
   arrowDown: Icon.ChevronDownIcon,
   star: Icon.StarIcon,
