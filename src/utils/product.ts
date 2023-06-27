@@ -1,4 +1,4 @@
-import { CartProduct } from 'store/addToCartAction';
+import { CartProduct } from 'store/cartActions';
 import { Dimension, Product } from '@prisma/client';
 import { removeDuplicates } from './removeDuplicates';
 import { sortAlphabetically } from './sortAlphabetically';

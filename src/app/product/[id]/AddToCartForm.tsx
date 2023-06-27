@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { AddToCartProductType } from 'store/addToCartAction';
+import { AddToCartProductType } from 'store/cartActions';
 import { twMerge } from 'tailwind-merge';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';

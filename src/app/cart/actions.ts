@@ -1,6 +1,6 @@
 'use server';
 
-import { CartProduct } from 'store/addToCartAction';
+import { CartProduct } from 'store/cartActions';
 import { Stripe } from 'stripe';
 
 const stripe: Stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export async function createPayment({ cartProducts }: Props) {
-  const origin = 'https://shoptom.vercel.app';
+  const origin = 'https://shoptom.vercel.app/cart';
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -32,6 +32,6 @@ export async function createPayment({ cartProducts }: Props) {
 
     return { status: 200, statusText: 'OK', url: session.url };
   } catch (err: unknown) {
-    return { status: 500, statusText: 'Something went wrong during checkout' };
+    return { status: 500, statusText: 'Something went wrong during checkout', url: null };
   }
 }

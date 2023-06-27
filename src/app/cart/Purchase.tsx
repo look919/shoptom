@@ -1,6 +1,5 @@
 'use client';
 
-import { FormEvent } from 'react';
 import { useStore } from '@store';
 import { Button } from '@ui';
 import { getTotalCartPrice } from '@utils/product';
@@ -10,11 +9,12 @@ export const Purchase = () => {
   const { cart } = useStore();
   const total = getTotalCartPrice(cart);
 
-  const handlePayment = async (e: FormEvent) => {
-    e.preventDefault();
+  const handlePayment = async () => {
     const res = await createPayment({ customerId: '42', cartProducts: cart });
 
-    console.log('res', res);
+    if (res.url) {
+      window.location.assign(res.url);
+    }
   };
 
   return (
@@ -24,9 +24,9 @@ export const Purchase = () => {
         <span className='text-2xl text-green-600'>{total}€</span>
       </div>
 
-      <form onSubmit={handlePayment} className='mt-4 self-end'>
-        <Button type='submit'>Purchase</Button>
-      </form>
+      <Button onClick={handlePayment} className='mt-4 self-end'>
+        Purchase
+      </Button>
     </>
   );
 };

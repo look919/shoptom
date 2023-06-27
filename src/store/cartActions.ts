@@ -60,3 +60,8 @@ export const addToCartAction = ({ data, product, set }: AddToCartAction) =>
     localStorage.setItem('cart', JSON.stringify(itemsAfterNewAddition));
     return { cart: itemsAfterNewAddition };
   });
+
+export const clearCartAction = (set: SetStore) => {
+  localStorage.setItem('cart', JSON.stringify([]));
+  set({ cart: [] });
+};
