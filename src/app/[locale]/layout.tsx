@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { Toaster } from 'react-hot-toast';
 import { ClerkProvider } from '@clerk/nextjs/app-beta';
 import { Icons } from '@ui';
@@ -14,12 +16,20 @@ export const metadata = {
 type Props = {
   children: ReactNode;
   modal: ReactNode;
+  params: { locale: string };
 };
 
-export default function RootLayout({ children, modal }: Props) {
+export default function RootLayout({ children, modal, params }: Props) {
+  const locale = useLocale();
+
+  // Show a 404 error if the user requests an unknown locale
+  if (params.locale !== locale) {
+    notFound();
+  }
+
   return (
     <ClerkProvider>
-      <html lang='en'>
+      <html lang={locale}>
         <body>
           <Toaster position='top-center' reverseOrder={false} />
           <header className='mb-8 flex justify-between p-6'>

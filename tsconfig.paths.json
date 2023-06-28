@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@page/*": ["app/*"],
+      "@page/*": ["app/[locale]/*"],
       "@lib/*": ["lib/*"],
       "@store": ["store/index.ts"],
       "@ui": ["components"],
