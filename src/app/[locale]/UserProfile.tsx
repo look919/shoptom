@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { UserButton, SignedIn } from '@clerk/nextjs/app-beta';
-import { SignedOut } from '@clerk/nextjs/app-beta/client';
+import { UserButton } from '@clerk/nextjs/app-beta';
+import { SignedOut, SignedIn } from '@clerk/nextjs/app-beta/client';
 
 export const UserProfile = () => {
   return (

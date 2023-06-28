@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Toaster } from 'react-hot-toast';
 import { ClerkProvider } from '@clerk/nextjs/app-beta';
 import { Icons } from '@ui';
+import { LanguageSelect } from './LanguageSelect';
 import { UserProfile } from './UserProfile';
 import './globals.css';
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children, modal, params }: Props) {
               <h1 className='text-4xl'>ShopTom</h1>
             </Link>
             <div className='flex items-center'>
+              <LanguageSelect />
               <Icons.search className='mr-4 h-6 w-6' />
               <Link href='/cart'>
                 <Icons.cart className='mr-4 h-6 w-6' />

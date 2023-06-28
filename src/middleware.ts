@@ -8,7 +8,16 @@ export default authMiddleware({
     return intlMiddleware({ locales: ['en', 'pl'], defaultLocale: 'en' })(req);
   },
 
-  publicRoutes: ['/', '/sign-in', '/sign-up', '/api(.*)', '/product(.*)', '/gallery(.*)', '/cart'],
+  publicRoutes: [
+    '/',
+    '/:locale',
+    '/api(.*)',
+    '/:locale/sign-in',
+    '/:locale/sign-up',
+    '/:locale/product(.*)',
+    '/:locale/gallery(.*)',
+    '/:locale/cart',
+  ],
 });
 
 export const config = {
