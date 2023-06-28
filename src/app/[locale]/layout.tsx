@@ -37,11 +37,11 @@ export default function RootLayout({ children, modal, params }: Props) {
             <Link href='/'>
               <h1 className='text-4xl'>ShopTom</h1>
             </Link>
-            <div className='flex items-center'>
+            <div className='flex items-center gap-4'>
               <LanguageSelect />
-              <Icons.search className='mr-4 h-6 w-6' />
+              <Icons.search className='h-6 w-6' />
               <Link href='/cart'>
-                <Icons.cart className='mr-4 h-6 w-6' />
+                <Icons.cart className='mr-2 h-6 w-6' />
               </Link>
               <UserProfile />
             </div>

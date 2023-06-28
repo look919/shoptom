@@ -1,28 +1,28 @@
 'use client';
 
-import React from 'react';
+import { ReactNode } from 'react';
+import Link from 'next-intl/link';
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ReactSelect, { StylesConfig } from 'react-select';
 
 type SelectOptionProps = {
-  href: string;
+  locale: string;
   text: string;
   src: string;
 };
 
-const SelectOption = ({ href, src, text }: SelectOptionProps) => {
+const SelectOption = ({ locale, src, text }: SelectOptionProps) => {
   return (
-    <Link href={href} className='flex items-center'>
-      <Image src={src} height={20} width={20} alt={`language ${text} option image`} className='mr-1' />
+    <Link href='/' locale={locale} className='flex items-center'>
+      <Image src={src} height={12} width={16} alt={`language ${text} option image`} className='mr-1' />
       <span className='text-sm text-white'>{text}</span>
     </Link>
   );
 };
 
 type LanguageOption = {
-  label: React.ReactNode;
+  label: ReactNode;
   value: string;
 };
 
@@ -30,12 +30,11 @@ const customStyles: StylesConfig<LanguageOption> = {
   control: provided => ({
     ...provided,
     color: 'white',
-    backgroundColor: '#0f172a',
-    border: '1px solid gray',
+    backgroundColor: 'inherit',
+    border: 'none',
     cursor: 'pointer',
     minHeight: '2.5rem',
   }),
-
   menu: provided => ({
     ...provided,
     backgroundColor: '#0f172a',
@@ -43,27 +42,32 @@ const customStyles: StylesConfig<LanguageOption> = {
   option: (provided, state) => ({
     ...provided,
     cursor: 'pointer',
-    backgroundColor: state.isFocused ? '#1d2d50' : '#0f172a',
+    backgroundColor: state.isFocused ? '#1d2d50' : 'inherit',
   }),
   input: provided => ({
     ...provided,
     color: 'white',
   }),
-  placeholder: provided => ({
+  indicatorsContainer: provided => ({
     ...provided,
-    color: '#9CA3AF',
-    textAlign: 'center',
-    paddingLeft: '2rem',
+    svg: {
+      height: '1rem',
+      width: '1rem',
+    },
+  }),
+  dropdownIndicator: provided => ({
+    ...provided,
+    padding: '4px',
   }),
 };
 
 const options = [
   {
-    label: <SelectOption href='/en' text='EN' src='/images/en.jpg' />,
+    label: <SelectOption locale='en' text='EN' src='/images/en.jpg' />,
     value: 'en',
   },
   {
-    label: <SelectOption href='/pl' text='PL' src='/images/pl.jpg' />,
+    label: <SelectOption locale='pl' text='PL' src='/images/pl.jpg' />,
     value: 'pl',
   },
 ];
@@ -78,7 +82,8 @@ export const LanguageSelect = () => {
       value={options.find(option => option.value === locale)}
       placeholder={null}
       styles={customStyles}
-      className='z-30 mr-2'
+      className='z-30'
+      isSearchable={false}
     />
   );
 };
