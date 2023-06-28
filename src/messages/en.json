@@ -1,5 +1,17 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "Filters": {
+    "header": "Filters",
+    "name": "Name",
+    "producer": "Producer",
+    "minPrice": "Min price",
+    "maxPrice": "Max price",
+    "setFilters": "Set filters"
+  },
+  "DashboardProduct": {
+    "alt": "Product image",
+    "viewGallery": "View gallery"
+  },
+  "Gallery": {
+    "showDetails": "Show details"
   }
 }

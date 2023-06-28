@@ -1,6 +1,6 @@
 import { db } from '@lib/db';
-import { DashboardProduct } from './DashboardProduct';
-import { Filters } from './Filters';
+import { DashboardProduct } from './components/DashboardProduct';
+import { Filters } from './components/Filters/Filters';
 
 type Props = {
   searchParams: {

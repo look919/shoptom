@@ -1,5 +1,10 @@
 {
-  "Index": {
-    "title": "POlska gola!"
+  "Filters": {
+    "header": "Filtry",
+    "name": "Nazwa",
+    "producer": "Producent",
+    "minPrice": "Cena minimalna",
+    "maxPrice": "Cena maksymalna",
+    "setFilters": "Ustaw filtry"
   }
 }
